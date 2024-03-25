@@ -33,8 +33,8 @@ pipeline {
      stage('Docker Login') {
       steps {
         echo 'Docker Login'
-        withCredentials([usernamePassword(credentialsId: 'Dhub', passwordVariable: 'Dpass', usernameVariable: 'Duser')]) {
-        sh 'docker login -u ${env.Duser} -p ${env.Dpass}'
+        withCredentials([usernamePassword(credentialsId: 'Dhub', passwordVariable: 'D-pass', usernameVariable: 'D-user')]) {
+        sh 'docker login -u ${env.D-user} -p ${env.D-pass}'
                     }
              }
     }
