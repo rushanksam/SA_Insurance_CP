@@ -34,11 +34,9 @@ pipeline {
      stage('Docker Login') {
       steps {
         echo 'Docker Login'
-        withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhub-pwd')]) {
-        sh 'docker login -u rushanksam -p ${dockerhub-pwd}'
+        sh 'docker login -u rushanksam -p Samrush@7'
                     }
              }
-    }
      stage('Push Docker Image') {
       steps {
         echo 'Push a Docker Image'
