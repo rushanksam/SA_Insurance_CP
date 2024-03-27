@@ -20,8 +20,12 @@
     command : docker pull rushanksam/insurance_project:1.0
     become : yes
     become_user : root
-
-  - name : Deploy the app using image
-    command : docker -d -p 8085:8081 rushanksam/insurance_project:1.0
-    become : yes
-    become_user : root
+    
+  - name: Run Docker container
+    docker_container:
+      name: insurance_c1
+      image: rushanksam/insurance_project:1.0
+      state: started
+      detach: true
+      ports:
+        - "8085:8081"
