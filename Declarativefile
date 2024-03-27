@@ -34,7 +34,7 @@ pipeline {
      stage('Docker Login') {
       steps {
         echo 'Docker Login'
-        withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
+        withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'docker-hub-pass')]) {
         sh 'docker login -u rushanksam -p ${dockerhubpwd}'
                     }
              }
