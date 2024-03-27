@@ -22,6 +22,6 @@
     become_user : root
 
   - name : Deploy the app using image
-    command : docker -itd -p 8085:8081 rushanksam/insurance_project:1.0
+    command : docker -d -p 8085:8081 rushanksam/insurance_project:1.0
     become : yes
     become_user : root
